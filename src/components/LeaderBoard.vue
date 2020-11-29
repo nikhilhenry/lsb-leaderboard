@@ -1,17 +1,39 @@
 <template>
   <div>
-    <p>test</p>
-    <svg class="barchart" :width="width" :height="height">
-      <g class="bars" fill="none">
-        <rect
+    <svg class="barchart" :width="width + 40" :height="height + 100">
+      <g transform="translate(20, 70)">
+        <g class="x-axis" fill="none" :transform="`translate(0, ${height})`">
+          <g
+            class="tick"
+            opacity="1"
+            font-size="15"
+            font-family="sans-serif"
+            text-anchor="middle"
+            v-for="(bar, index) in bars"
+            :key="index"
+            :transform="`translate(${bar.x + bar.width / 2}, 0)`"
+          >
+            <text fill="currentColor" y="9" dy="0.71em">{{ bar.xLabel }}</text>
+          </g>
+        </g>
+        <g class="bars" fill="none">
+          <rect
+            v-for="(bar, index) in bars"
+            :fill="bar.color"
+            :key="index"
+            :height="bar.height"
+            :width="bar.width"
+            :x="bar.x"
+            :y="bar.y"
+          ></rect>
+        </g>
+        <g class="icons" fill="none"
           v-for="(bar, index) in bars"
-          fill="pink"
           :key="index"
-          :height="bar.height"
-          :width="bar.width"
-          :x="bar.x"
-          :y="bar.y"
-        ></rect>
+          :transform="`translate(${bar.x + bar.width/4}, ${bar.y - 60})`"
+        >
+        <image :href="bar.image" height="50" width="50" x="-5"/>
+        </g>
       </g>
     </svg>
   </div>
@@ -24,17 +46,13 @@ export default {
   name:'LeaderBoard',
   data() {
     return {
-      height: 200,
+      height: 300,
       width: 500,
       dataset: [
-        ["Bob", 33],
-        ["Robin", 24],
-        ["Mark", 22],
-        ["Joe", 29],
-        ["Eve", 38],
-        ["Karen", 21],
-        ["Kirsty", 25],
-        ["Chris", 30],
+        [39, 39,require('../assets/Posideon.png'),'#52A1D3'],
+        [24, 24,require('../assets/Phoneix.png'),'#D9311C'],
+        [22, 22,require('../assets/Hercules.png'),'#D6D02F'],
+        [29, 29,require('../assets/Ceasar.png'),'#52D38E'],
       ],
     }
   },
@@ -61,7 +79,9 @@ export default {
           x: this.x(d[0]),
           y: this.y(d[1]),
           width: this.x.bandwidth(),
-          height: this.height - this.y(d[1])
+          height: this.height - this.y(d[1]),
+          image:d[2],
+          color:d[3]
         };
       });
       return bars;
