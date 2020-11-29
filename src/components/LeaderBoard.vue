@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="leaderboard">
     <svg class="barchart" :width="width + 40" :height="height + 100">
       <g transform="translate(20, 70)">
         <g class="x-axis" fill="none" :transform="`translate(0, ${height})`">
@@ -91,4 +91,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.leaderboard{
+  text-align: center;
+}
 </style>
