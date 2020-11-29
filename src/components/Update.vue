@@ -4,7 +4,7 @@
       <header class="card-header">
         <p class="card-header-title">{{update.title}}</p>
         <div class="extra">
-          <span class="tag is-success is-small">{{update.points}}</span>
+          <span class="tag is-success is-small">+ {{update.points}}</span>
         </div>
         <a href="#" class="card-header-icon" aria-label="more options">
           <span class="icon">
