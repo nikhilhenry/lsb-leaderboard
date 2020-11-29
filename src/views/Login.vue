@@ -59,6 +59,9 @@ export default {
               this.errors=[]
               this.errors.push({message:'LoggedIn Successfully.'})
               this.IsSuccess=true
+              
+              //go to updatePoints route
+              setTimeout(() => this.$router.push({ name: "UpdatePoints" }), 1000);
             },
             err=>{
               this.errors=[]
