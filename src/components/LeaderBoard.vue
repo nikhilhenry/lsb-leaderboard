@@ -49,10 +49,10 @@ export default {
       height: 300,
       width: 500,
       dataset: [
-        [39, 39,require('../assets/Posideon.png'),'#52A1D3'],
-        [24, 24,require('../assets/Phoneix.png'),'#D9311C'],
-        [22, 22,require('../assets/Hercules.png'),'#D6D02F'],
-        [29, 29,require('../assets/Ceasar.png'),'#52D38E'],
+        [39, 39,require('../assets/Posideon.png'),'#0066b2'],
+        [24, 24,require('../assets/Phoneix.png'),'#E32636'],
+        [22, 22,require('../assets/Hercules.png'),'#FFD700'],
+        [29, 29,require('../assets/Ceasar.png'),'#1CAC78'],
       ],
     }
   },
@@ -91,11 +91,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  // rect{
-  //   fill:rgb(29, 148, 184);
-  // }
-
-  // text{
-  //   fill:white;
-  // }
 </style>
