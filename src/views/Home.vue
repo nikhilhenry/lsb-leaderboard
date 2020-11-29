@@ -1,7 +1,17 @@
 <template>
   <div class="home">
-    <h1>Welcome to the Legacy School House Leaderboard</h1>
-    <Leaderboard/>
+    <h1 class="title has-text-centered mt-6">Legacy School House Leaderboard</h1>
+    <div class="section">
+      <div class="container">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <Leaderboard/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,3 +25,6 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+</style>
