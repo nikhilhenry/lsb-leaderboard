@@ -3,7 +3,9 @@
     <article class="card mb-3">
       <header class="card-header">
         <p class="card-header-title">{{update.title}}</p>
-        <span class="tag">{{update.points}}</span>
+        <div class="extra">
+          <span class="tag is-success is-small">{{update.points}}</span>
+        </div>
         <a href="#" class="card-header-icon" aria-label="more options">
           <span class="icon">
             <i v-if="!isHidden" class="fas fa-angle-down" aria-hidden="true" @click="isHidden=!isHidden"></i>
@@ -35,6 +37,12 @@ export default {
 <style lang="scss" scoped>
 .is-hidden{
   display: none;
+}
+
+.extra{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 </style>
