@@ -1,7 +1,7 @@
 <template>
 <div class="login">
   <div class="columns is-mobile is-centered mt-6">
-    <div class="column is-one-quarter">
+    <div class="column is-half-mobile is-two-fifths-desktop">
       <article class="card">
         <div class="card-content">
           <h1 class="title has-text-centered">Login</h1>
@@ -57,7 +57,7 @@ export default {
           .then(
             ()=>{
               this.errors=[]
-              this.errors.push({message:'Loggedin Successfully'})
+              this.errors.push({message:'LoggedIn Successfully.'})
               this.IsSuccess=true
             },
             err=>{
@@ -67,7 +67,9 @@ export default {
             }
         )}
         else {
-          alert("Sorry but you're not welcome")
+          this.errors=[]
+          this.errors.push({message:'Please enter email and password.'})
+          this.IsSuccess=false
         }
       e.preventDefault();
     }
@@ -76,4 +78,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.column{
+  max-width:500px!important;
+}
 </style>
