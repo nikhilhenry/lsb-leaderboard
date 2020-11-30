@@ -6,6 +6,8 @@
 
 <script>
 import Update from '@/components/Update.vue'
+import {getMessages} from '../api/getMessages'
+
 export default {
   name:'Updates',
   components:{
@@ -13,8 +15,16 @@ export default {
   },
   data(){
     return{
-      updates:[{title:'Lorem Ipsum',message:'Lorem Ipsum dolor',points:10},{title:'Lorem Ipsum',message:'Lorem Ipsum dolor',points:10},{title:'Lorem Ipsum',message:'Lorem Ipsum dolor',points:10}]
+      updates:[]
     }
+  },
+  mounted(){
+    getMessages()
+      .then(res=>{
+        res.forEach(doc=>{
+        this.updates.push(doc.data())
+        })
+      })
   }
 }
 </script>
