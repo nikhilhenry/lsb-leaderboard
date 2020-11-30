@@ -66,7 +66,7 @@
         <button class="button is-link" @click="submit">Submit</button>
       </div>
       <div class="control">
-        <button class="button is-link is-light">Cancel</button>
+        <button class="button is-link is-light" @click="$router.push({name:'Home'})">Back</button>
       </div>
     </div>
   </div>
