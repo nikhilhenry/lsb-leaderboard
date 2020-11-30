@@ -16,12 +16,12 @@ export async function addMessage(message){
     //update points
     await houseRef.update({points:doc.data().points+Number(message.points)})
 
+    //add message
+
     await firebase.firestore().collection('messages').add(message)
 
 
     return {message:'Points updated sucessfully',success:true}
-
-    //add message
   }
 
 }
