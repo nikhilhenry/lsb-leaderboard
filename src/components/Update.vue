@@ -6,16 +6,18 @@
         <div class="extra">
           <span class="tag is-success is-small">+ {{update.points}}</span>
         </div>
-        <a href="#" class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i v-if="!isHidden" class="fas fa-angle-down" aria-hidden="true" @click="isHidden=!isHidden"></i>
-            <i v-if="isHidden" class="fas fa-angle-up" aria-hidden="true" @click="isHidden=!isHidden"></i>
+        <a class="card-header-icon" aria-label="more options" @click="isHidden=!isHidden">
+          <span v-if="isHidden" class="icon">
+            <i  class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+          <span v-if="!isHidden" class="icon">
+            <i class="fas fa-angle-up" aria-hidden="true"></i>
           </span>
         </a>
       </header>
       <div class="card-content" :class="{'is-hidden':isHidden}">
         <div class="content">
-          <p>{{update.message}}</p>
+          <p>{{update.content}}</p>
         </div>
       </div>
     </article>
