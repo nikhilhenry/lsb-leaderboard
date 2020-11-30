@@ -97,7 +97,7 @@ export default {
           title:this.title,
           house:this.house,
           content:this.content,
-          points:this.points,
+          points:Number(this.points),
           name:this.name
         }
         const error = await addMessage(message)
