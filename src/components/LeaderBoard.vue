@@ -41,6 +41,7 @@
 
 <script>
 import {scaleBand,scaleLinear} from 'd3-scale';
+import {getPoints} from '../api/getPoints';
 
 export default {
   name:'LeaderBoard',
@@ -48,17 +49,33 @@ export default {
     return {
       height: 300,
       width: 500,
-      dataset: [
-        [39, 39,require('../assets/Posideon.png'),'#0066b2'],
-        [24, 24,require('../assets/Phoneix.png'),'#E32636'],
-        [22, 22,require('../assets/Hercules.png'),'#FFD700'],
-        [29, 29,require('../assets/Ceasar.png'),'#1CAC78'],
-      ],
+      dataset:[]
     }
   },
   mounted(){
     console.log(this.data)
+    getPoints()
+      .then(res=>this.updateData(res))
+      .catch(err=>console.log(err))
   },
+
+  //update data
+  methods:{
+    updateData(incomeData){
+      //data values to dataset
+
+      //poseidon
+      this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/Posideon.png'),'#0066b2'])
+      //phoenix
+      this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/Phoneix.png'),'#E32636'])
+      //hercules
+      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/Hercules.png'),'#FFD700'])
+      //ceasar
+      this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/Ceasar.png'),'#1CAC78'])
+    }
+  },
+
+  // graph stuff
   computed: {
     x() {
       return scaleBand()
