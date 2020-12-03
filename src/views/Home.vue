@@ -15,9 +15,9 @@
               <Updates/>
             </div>
           </div>
+          <h3 class="subtitle-2 has-text-centered">Built by <a href="https://nikhilhenry.github.io">Nikhil Henry</a>, from the President's Office.</h3>
         </div>
       </div>
-      <h3 class="subtitle-2 has-text-centered">Built by <a href="https://nikhilhenry.github.io">Nikhil Henry</a>, from the President's Office.</h3>
   </div>
 </template>
 
