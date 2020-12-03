@@ -12,6 +12,12 @@
         <div class="container">
           <div class="columns is-centered">
             <div class="column is-half">
+              <article class="message is-success">
+                <div class="message-body">
+                  <p>Please note that these scores are only temporary and live points will be updated from the date of event commencement (14/12/2020).</p>
+                  <p>Looking forward to enthusiastic participation - Nikhil Henry, Student Council President.</p>
+                </div>
+              </article>
               <Updates/>
             </div>
           </div>
