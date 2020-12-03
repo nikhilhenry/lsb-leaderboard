@@ -1,29 +1,37 @@
 <template>
   <div>
-    <Update v-for="(update,index) in updates" :key="index" :update="update"/>
+    <virtual-list style="height: 300px; overflow-y: auto;"
+      :data-key="'id'"
+      :data-sources="updates"
+      :data-component="updateComponent"
+    />
   </div>
 </template>
 
 <script>
 import Update from '@/components/Update.vue'
 import {getMessages} from '../api/getMessages'
+import VirtualList from 'vue-virtual-scroll-list'
 
 export default {
   name:'Updates',
   components:{
-    Update
+    'virtual-list': VirtualList
   },
   data(){
     return{
-      updates:[]
+      updates:[],
+      updateComponent:Update
     }
   },
   mounted(){
     getMessages()
       .then(res=>{
         res.forEach(doc=>{
-        this.updates.push(doc.data())
-        })
+        const update = doc.data()
+        update.id = doc.id
+        this.updates.push(update)
+      })
       })
   }
 }
