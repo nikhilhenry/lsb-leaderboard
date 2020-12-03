@@ -16,8 +16,10 @@ export async function addMessage(message){
     //update points
     await houseRef.update({points:doc.data().points+Number(message.points)})
 
-    //add message
+    //add severTimestamp to message
+    message.created = firebase.firestore.FieldValue.serverTimestamp();
 
+    // add message
     await firebase.firestore().collection('messages').add(message)
 
 
