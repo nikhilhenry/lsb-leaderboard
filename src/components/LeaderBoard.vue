@@ -1,7 +1,7 @@
 <template>
   <div class="leaderboard">
     <svg class="barchart" :width="width + 40" :height="height + 100">
-      <g transform="translate(20, 70)">
+      <g transform="translate(20, 80)">
         <g class="x-axis" fill="none" :transform="`translate(0, ${height})`">
           <g
             class="tick"
@@ -32,7 +32,7 @@
           :key="index"
           :transform="`translate(${bar.x + bar.width/4}, ${bar.y - 60})`"
         >
-        <image :href="bar.image" height="50" width="50" x="-5"/>
+        <image :href="bar.image" height="70" width="70" x="-15" y="-15"/>
         </g>
       </g>
     </svg>
@@ -65,13 +65,13 @@ export default {
       //data values to dataset
 
       //poseidon
-      this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/Posideon.png'),'#0066b2'])
+      this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
       //phoenix
-      this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/Phoneix.png'),'#E32636'])
+      this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
       //hercules
-      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/Hercules.png'),'#FFD700'])
+      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/hercules.png'),'#FFD700'])
       //ceasar
-      this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/Ceasar.png'),'#1CAC78'])
+      this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
     }
   },
 
