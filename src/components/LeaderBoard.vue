@@ -32,7 +32,7 @@
           :key="index"
           :transform="`translate(${bar.x + bar.width/4}, ${bar.y - 60})`"
         >
-        <image :href="bar.image" height="70" width="70" x="-15" y="-15"/>
+        <image :href="bar.image" height="70" width="70" x="-15" y="-20"/>
         </g>
       </g>
     </svg>
