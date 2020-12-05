@@ -1,6 +1,6 @@
 <template>
   <div>
-    <virtual-list style="height: 300px; overflow-y: auto;"
+    <virtual-list style="height: 400px; overflow-y: auto;"
       :data-key="'id'"
       :data-sources="updates"
       :data-component="updateComponent"
