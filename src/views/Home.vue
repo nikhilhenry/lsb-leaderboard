@@ -15,7 +15,8 @@
               <article class="message is-success">
                 <div class="message-body">
                   <p>Please note that these scores are only temporary and live points will be updated from the date of event commencement (14/12/2020).</p>
-                  <p>Looking forward to enthusiastic participation - Nikhil Henry, Student Council President.</p>
+                  <p>Looking forward to enthusiastic participation!</p>
+                  <i>- Nikhil Henry, Student Council President.</i>
                 </div>
               </article>
               <Updates/>
