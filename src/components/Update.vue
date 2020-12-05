@@ -1,12 +1,12 @@
 <template>
   <div>
     <article class="card mb-3">
-      <header class="card-header">
+      <header class="card-header"  @click="isHidden=!isHidden">
         <p class="card-header-title">{{source.title}}</p>
         <div class="extra">
           <span class="tag is-success is-small">+ {{source.points}}</span>
         </div>
-        <a class="card-header-icon" aria-label="more options" @click="isHidden=!isHidden">
+        <a class="card-header-icon" aria-label="more options">
           <span v-if="isHidden" class="icon">
             <i  class="fas fa-angle-down" aria-hidden="true"></i>
           </span>
@@ -60,6 +60,7 @@ export default {
 
 article{
   margin:.5em;
+  cursor: pointer;
 }
 
 </style>
