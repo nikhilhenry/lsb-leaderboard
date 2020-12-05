@@ -1,19 +1,19 @@
 <template>
   <div class="leaderboard">
-    <svg class="barchart" :width="width + 40" :height="height + 100">
+    <svg class="barchart" :width="width + 40" :height="height + 105">
       <g transform="translate(20, 80)">
         <g class="x-axis" fill="none" :transform="`translate(0, ${height})`">
           <g
             class="tick"
             opacity="1"
-            font-size="15"
-            font-family="sans-serif"
+            font-size="18"
+            font-family="Avenir, Helvetica, Arial, sans-serif"
             text-anchor="middle"
             v-for="(bar, index) in bars"
             :key="index"
             :transform="`translate(${bar.x + bar.width / 2}, 0)`"
           >
-            <text fill="currentColor" y="9" dy="0.71em">{{ bar.xLabel }}</text>
+            <text fill="black" y="9" dy="0.71em">{{ bar.xLabel }}</text>
           </g>
         </g>
         <g class="bars" fill="none">
