@@ -70,8 +70,8 @@ export default {
       this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
       //phoenix
       this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
-      //hercules
-      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/hercules.png'),'#FFD700'])
+      //hercules_
+      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/hercules_.png'),'#FFD700'])
       //ceasar
       this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
     }
