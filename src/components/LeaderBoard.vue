@@ -25,6 +25,8 @@
             :width="bar.width"
             :x="bar.x"
             :y="bar.y"
+            rx="5"
+            ry="5"
           ></rect>
         </g>
         <g class="icons" fill="none"
