@@ -6,6 +6,6 @@ export async function getMessages(){
   const messageRef = firebase.firestore().collection('messages').orderBy('created','desc')
 
   //get messages
-  const snapshot = await messageRef.get();
+  const snapshot = await messageRef.where('mode', '==', 'live').get();
   return snapshot
 }
