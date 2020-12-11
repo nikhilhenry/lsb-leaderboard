@@ -66,6 +66,9 @@ export default {
     updateData(incomeData){
       //data values to dataset
 
+      //house
+      // x-label,points (y-value),house logo,color
+
       //poseidon
       this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
       //phoenix
