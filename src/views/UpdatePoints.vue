@@ -98,7 +98,8 @@ export default {
           house:this.house,
           content:this.content,
           points:Number(this.points),
-          name:this.name
+          name:this.name,
+          mode:'live'
         }
         const error = await addMessage(message)
         this.errors = []
