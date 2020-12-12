@@ -70,13 +70,13 @@ export default {
       // x-label,points (y-value),house logo,color
 
       //poseidon
-      this.dataset.push(['Poseidon - 0',incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
+      this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
       //phoenix
-      this.dataset.push(['Phoenix - 0',incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
+      this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
       //hercules_
-      this.dataset.push(['Hercules - 0',incomeData.docs[2].data().points,require('../assets/hercules_.png'),'#FFD700'])
+      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/hercules_.png'),'#FFD700'])
       //ceasar
-      this.dataset.push(['Caesar - 0',incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
+      this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
     }
   },
 
