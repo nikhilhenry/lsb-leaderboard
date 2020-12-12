@@ -63,7 +63,7 @@
 
     <div class="field is-grouped mt-6">
       <div class="control">
-        <button class="button is-link" @click="submit">Submit</button>
+        <button class="button is-link" :class="{'is-loading':isLoading}" @click="submit">Submit</button>
       </div>
       <div class="control">
         <button class="button is-link is-light" @click="$router.push({name:'Home'})">Back</button>
@@ -86,13 +86,16 @@ export default {
       points:0,
       name:'',
       errors:null,
-      isSuccess:false
+      isSuccess:false,
+      isLoading:false,
     }
   },
   methods:{
     submit:async function(){
+      this.isLoading = !this.isLoading
+      this.errors = null
+
       if(this.title && this.house && this.content && this.points && this.name){
-        console.log('success')
         const message = {
           title:this.title,
           house:this.house,
@@ -101,14 +104,24 @@ export default {
           name:this.name,
           mode:'live'
         }
-        const error = await addMessage(message)
-        this.errors = []
-        this.errors.push(error)
-        if(error.success) this.isSuccess = true
-
+        addMessage(message)
+          .then(res=>{
+            this.errors = []
+            this.errors.push(res)
+            if(res.success) this.isSuccess = true
+            this.isLoading = !this.isLoading
+          })
+          .catch(res=>{
+            this.errors = []
+            this.errors.push(res)
+            if(res.success) this.isSuccess = true
+            this.isLoading = !this.isLoading
+          })
       }
       else{
-        console.log('fail')
+        this.errors = []
+        this.errors.push({message:'Please enter all fields.'})
+        this.isLoading = !this.isLoading
       }
     },
   }
