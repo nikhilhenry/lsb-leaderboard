@@ -68,6 +68,10 @@
       <div class="control">
         <button class="button is-link is-light" @click="$router.push({name:'Home'})">Back</button>
       </div>
+      <!-- delete all live messages -->
+      <!-- <div class="control">
+        <button class="button is-link is-light" @click="deleteLive">Delete Live</button>
+      </div> -->
     </div>
   </div>
 </div>
@@ -75,6 +79,7 @@
 
 <script>
 import {addMessage} from '../api/addMessage'
+import {deleteLive} from '../api/deleteLive'
 
 export default {
   name:'UpdatePoints',
@@ -124,6 +129,9 @@ export default {
         this.isLoading = !this.isLoading
       }
     },
+    deleteLive:async function(){
+      deleteLive()
+    }
   }
 }
 </script>
