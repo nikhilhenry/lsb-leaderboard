@@ -12,18 +12,29 @@ export async function addMessage(message){
   if (!doc.exists) {
     console.log('No such document!');
   } else {
-    console.log('Document data:', doc.data());    
-    //update points
-    await houseRef.update({points:doc.data().points+Number(message.points)})
-
+    console.log('Document data:', doc.data());
+    
+    // add user id to message
+    message.uid = firebase.auth().currentUser.uid
+    
     //add severTimestamp to message
     message.created = firebase.firestore.FieldValue.serverTimestamp();
 
     // add message
-    await firebase.firestore().collection('messages').add(message)
-
-
-    return {message:'Points updated sucessfully',success:true}
+    try{
+      await firebase.firestore().collection('messages').add(message)
+    }
+    catch(e){
+      return {message:e,success:false}
+    }
+    //update points
+    try{
+      await houseRef.update({points:doc.data().points+Number(message.points)})
+      return {message:'Points updated sucessfully.',success:true}
+    }
+    catch(e){
+      return {message:e,success:false}
+    }
   }
 
 }
