@@ -43,6 +43,20 @@
       </div>
     </div>
 
+  <!-- position -->
+
+  <div class="field">
+    <label class="label">Position</label>
+    <div class="control">
+      <div class="select">
+        <select v-model="position">
+          <option value="Winner">Winner</option>
+          <option value="First runner-up">First runner-up</option>
+          <option value="Second runner-up">Second runner-up</option>
+        </select>
+      </div>
+    </div>
+  </div>
     <!-- points -->
 
     <div class="field">
@@ -60,6 +74,19 @@
         <input class="input" type="text" v-model="name" required placeholder="Your name">
       </div>
     </div>
+
+    <!-- isWinner -->
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" v-model="isWinner">
+          Is Winner?
+        </label>
+      </div>
+    </div>
+
+    <!-- buttons -->
 
     <div class="field is-grouped mt-6">
       <div class="control">
@@ -88,11 +115,30 @@ export default {
       title:'',
       house:'',
       content:'',
-      points:0,
       name:'',
+      position:'null',
       errors:null,
       isSuccess:false,
       isLoading:false,
+    }
+  },
+  computed:{
+    points(){
+      //Point options
+      let calculatePoints = {
+        'Winner':50,
+        'First runner-up':30,
+        'Second runner-up':20,
+        'default':0
+      }
+
+      //Return the calucalted point
+      return (calculatePoints[this.position] || calculatePoints['default'])
+    },
+    isWinner(){
+      //Check if winenr
+      if(this.position == 'Winner') return true
+      else return false
     }
   },
   methods:{
@@ -107,7 +153,8 @@ export default {
           content:this.content,
           points:Number(this.points),
           name:this.name,
-          mode:'live'
+          mode:'live',
+          isWinner:this.isWinner
         }
         addMessage(message)
           .then(res=>{
