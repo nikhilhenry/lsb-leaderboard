@@ -4,6 +4,9 @@
       <header class="card-header"  @click="isHidden=!isHidden">
         <p class="card-header-title">{{source.title}}</p>
         <div class="extra">
+          <span v v-if="source.isWinner" class="icon">
+            <i class="fas fa-medal"></i>
+          </span>
           <span class="tag is-success is-small">+ {{source.points}}</span>
         </div>
         <a class="card-header-icon" aria-label="more options">
@@ -62,5 +65,12 @@ article{
   margin:.5em;
   cursor: pointer;
 }
+
+.fa-medal{
+  color: #ffc60b;
+  margin-right: 50px;
+  font-size: 1.6em;
+}
+
 
 </style>
