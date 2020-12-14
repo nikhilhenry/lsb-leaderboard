@@ -70,13 +70,13 @@ export default {
       // x-label,points (y-value),house logo,color
 
       //poseidon
-      this.dataset.push([incomeData.docs[0].data().points,incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
+      this.dataset.push(['poseidon',incomeData.docs[0].data().points,require('../assets/poseidon.png'),'#0066b2'])
       //phoenix
-      this.dataset.push([incomeData.docs[1].data().points,incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
+      this.dataset.push(['phoenix',incomeData.docs[1].data().points,require('../assets/phoenix.png'),'#E32636'])
       //hercules_
-      this.dataset.push([incomeData.docs[2].data().points,incomeData.docs[2].data().points,require('../assets/hercules_.png'),'#FFD700'])
-      //ceasar
-      this.dataset.push([incomeData.docs[3].data().points,incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
+      this.dataset.push(['hercules',incomeData.docs[2].data().points,require('../assets/hercules_.png'),'#FFD700'])
+      //caesar
+      this.dataset.push(['caesar',incomeData.docs[3].data().points,require('../assets/caesar.png'),'#009245'])
     }
   },
 
@@ -97,7 +97,7 @@ export default {
     bars() {
       let bars = this.dataset.map(d => {
         return {
-          xLabel: d[0],
+          xLabel: d[1],
           x: this.x(d[0]),
           y: this.y(d[1]),
           width: this.x.bandwidth(),
