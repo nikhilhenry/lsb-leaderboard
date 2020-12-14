@@ -14,7 +14,7 @@
             <div class="column is-half">
               <article class="message is-success">
                 <div class="message-body">
-                  <p>Please note that current scores are only for Advertise a Country (Grades 9 -12).Results for Solo Dance and Sock Puppet will be announced shortly</p>
+                  <p>Please note that current scores are only for Advertise a Country (Grades 9 -12).Results for Solo Dance and Sock Puppet will be announced shortly.</p>
                   <p>Looking forward to enthusiastic participation!</p>
                   <i>- Nikhil Henry, Student Council President.</i>
                 </div>
