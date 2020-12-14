@@ -67,9 +67,10 @@ article{
 }
 
 .fa-medal{
-  color:#FFD700;
+  color: #ffc60b;
   margin-right: 50px;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
+
 
 </style>
