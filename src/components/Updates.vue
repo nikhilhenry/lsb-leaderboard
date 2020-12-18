@@ -7,6 +7,8 @@
       :estimate-size="6"
       v-on:tobottom="onScrollToBottom"
     />
+    <!-- loader -->
+    <progress class="progress is-small is-success" max="100" v-if="isLoading">1%</progress>
   </div>
 </template>
 
@@ -24,10 +26,13 @@ export default {
     return{
       updates:[],
       lastDoc:Object,
-      updateComponent:Update
+      updateComponent:Update,
+      isLoading:false
     }
   },
   mounted(){
+
+    this.isLoading=!this.isLoading
     getMessages()
       .then(res=>{
         res.forEach(doc=>{
@@ -36,11 +41,13 @@ export default {
         this.updates.push(update)
         this.lastDoc = doc
       })
+      this.isLoading=!this.isLoading
       })
   },
   methods:{
     onScrollToBottom:async function(){
       // this.updates = this.updates.concat(getMoreMessages(this.updates[this.updates.length-1]))
+      this.isLoading=true
       const updates = await getMoreMessages(this.lastDoc)
       updates.forEach(doc=>{
         const update = doc.data()
@@ -49,6 +56,7 @@ export default {
         this.updates.push(update)
         this.lastDoc = doc
       })
+      this.isLoading=false
     }
   }
 }
