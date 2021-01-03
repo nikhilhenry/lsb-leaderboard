@@ -12,13 +12,14 @@
         <div class="container">
           <div class="columns is-centered">
             <div class="column is-half">
-              <!-- <article class="message is-success">
+              <article class="message is-success">
                 <div class="message-body">
-                  <p>Please note that current scores are only for Advertise a Country (Grades 9 -12).Results for Solo Dance and Sock Puppet will be announced shortly.</p>
-                  <p>Looking forward to enthusiastic participation!</p>
+                  <p>That brings us to the end of the thrilling series of events, Dimensions 2020.</p>
+                  <p>Hope everyone had a great time coming togther and experiencing a one of kind Dimensions rendition.</p>
+                  <p>Congrats to all the particants and winners for stepping up to the occasion!</p>
                   <i>- Nikhil Henry, Student Council President.</i>
                 </div>
-              </article> -->
+              </article>
               <Updates/>
             </div>
           </div>
