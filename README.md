@@ -18,6 +18,8 @@ Why settle for boring plastic cards telling you where your school house currentl
 
 This leaderboard system uses SVGs along with [d3-scale](https://github.com/d3/d3-scale). Firebase PaaS for authentication and cloud firestore for storing points.
 
+Live preview at https://lsb-leaderboard.netlify.app
+
 *Built using the power of [Vue](https://vuejs.org)*
 
 ## Installation
